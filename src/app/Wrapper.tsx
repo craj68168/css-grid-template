@@ -49,7 +49,7 @@ export const Wrapper = styled.div`
     display: grid;
     align-items: center;
     justify-content: center;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 20px;
 
     .container {
@@ -58,6 +58,20 @@ export const Wrapper = styled.div`
       justify-content: center;
       background-color: whitesmoke;
       min-height: 200px;
+    }
+   
+  }
+  @media screen and (min-width:400px){
+    .grid-container{
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+    }
+  }
+
+  @media screen and (min-width: 701px) {
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
     }
     .container:first-child {
       grid-column: 1 / 3; /* grid-column: span 2; */
@@ -71,8 +85,10 @@ export const Wrapper = styled.div`
       height: 100%;
     }
   }
-  @media (min-width: 50em) {
-    /* .grid-container {
+
+
+  /* @media (min-width: 50em) {
+    .grid-container {
       display: grid;
       grid-template-areas:
         "one one two five"
@@ -82,6 +98,6 @@ export const Wrapper = styled.div`
         display: grid;
         align-items: center;
       }
-    } */
-  }
+    }
+  } */
 `;
