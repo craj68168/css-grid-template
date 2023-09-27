@@ -2,7 +2,8 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  .grid-container {
+  width: 100%;
+  /* .grid-container {
     display: grid;
     grid-template-areas:
       "one"
@@ -40,10 +41,38 @@ export const Wrapper = styled.div`
       padding: 20px 0;
       font-size: 30px;
     }
-  }
+  } */
 
+  .grid-container {
+    background-color: #6b82f1;
+    padding: 20px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+
+    .container {
+      display: grid;
+      align-items: center;
+      justify-content: center;
+      background-color: whitesmoke;
+      min-height: 200px;
+    }
+    .container:first-child {
+      grid-column: 1 / 3; /* grid-column: span 2; */
+    }
+    .container:nth-child(5) {
+      grid-column: 2 / 4;
+    }
+    .container:nth-child(3) {
+      grid-column: 4 / 5;
+      grid-row: span 2; // grid-row: 1/3;
+      height: 100%;
+    }
+  }
   @media (min-width: 50em) {
-    .grid-container {
+    /* .grid-container {
       display: grid;
       grid-template-areas:
         "one one two five"
@@ -53,6 +82,6 @@ export const Wrapper = styled.div`
         display: grid;
         align-items: center;
       }
-    }
+    } */
   }
 `;
